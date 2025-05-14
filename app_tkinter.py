@@ -84,8 +84,15 @@ class HomePage(CenteredFrame):
                   command=lambda: controller.show_frame("RegistrationPage")).pack(pady=10)
 
         tk.Button(frame, bg="#CB7562", fg="#FFFFFF", text="Вход", font=("Verdana", 18, "bold"),
-                  command=lambda: controller.show_frame("LoginPage")).pack(pady=10) 
-        
+                  command=lambda: controller.show_frame("LoginPage")).pack(pady=10)
+
+        tk.Button(frame, bg="#808080", fg="#FFFFFF", text="Выйти из приложения", font=("Verdana", 12, "bold"),
+                  command=self.confirm_exit).pack(pady=30)
+    
+    def confirm_exit(self):
+        if tk.messagebox.askyesno("Выход", "Вы действительно хотите выйти из приложения?"):
+            self.controller.quit()
+
 class LoginPage(CenteredFrame):
     def __init__(self, parent, controller):
         super().__init__(parent)
