@@ -16,7 +16,7 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Аренда фототехники")
-        self.geometry("550x600")
+        self.geometry("655x600")
         self.resizable(False, False)
         self.configure(bg="#CB7562") 
 
